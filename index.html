@@ -4,8 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JavaScript Day 1</title>
+
+<style>
+    .main-text{
+        color: red;
+        font-size: larger;
+    }
+</style>
+
+
+
 </head>
-<body>
-    
+<body >
+ <h1 id="MainHeader">JavaScript Day 1</h1>
+ <p id="intro"></p>
+ <button onclick="displayWelcome()">Welcome </button>
+ <button onclick="ResetText()">Reset </button>
+
+<script>
+
+        function displayWelcome(){
+            console.log("Reached display Welcome");
+            // You can get the element by id
+            // We make a reference to it if we want to use it more than once    
+            mainHeader = document.getElementById("MainHeader");
+            mainHeader.innerHTML = "Welcome to JavaScript Day 1!";
+            mainHeader.style.color = "blue";    
+            mainHeader.style.backgroundColor = "yellow";
+            mainHeader.style.color = "red";
+            mainHeader.innerHTML = "Welcome to Day 1 of JavaScript!";
+            
+            // You can also get the element id and change property in one line
+            document.getElementById("intro").innerHTML = "This is the first day of learning JavaScript. We will learn the basics of JavaScript and how to manipulate the DOM."
+
+            document.getElementById("intro").classList.add("main-text");
+          
+        }
+        function resetText(){
+            // Remove style from intro paragraph
+            document.getElementById("intro").classList.remove("main-text");
+        }
+ 
+</script>
+
+   
+
 </body>
 </html>
